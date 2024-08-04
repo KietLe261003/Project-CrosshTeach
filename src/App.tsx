@@ -1,36 +1,90 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useState } from "react";
+import "./App.css";
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0);
+  // const [profile, setProfile] = useState({
+  //   name: "Kiệt",
+  //   age: 21,
+  //   favourite: ["Play game", "Watch Youtube"],
+  //   address: "Bình Dương",
+  // });
+  // const cong = () => {
+  //   setCount((pre) => pre + 1);
+  // };
+  // const [field, setField] = useState("");
+  // const [value, setValue] = useState("");
+  // const updateProfile = (fieldF: string, valueF: string) => {
+  //   setProfile((pre) => ({
+  //     ...pre,
+  //     [fieldF]: valueF,
+  //   }));
+  // };
 
+  // const gifts = ["Oto", "Xe máy", "1 đêm với Quốc Trung", "Iphone 15"];
+  // const [gift, setGift] = useState("Chưa có phần thưởng");
+  // const getGift = () => {
+  //   const random = Math.floor(Math.random() * gifts.length);
+  //   setGift(gifts[random]);
+  // };
+  const courses = [
+    {
+      id: 1,
+      name: "Kiệt",
+    },
+    {
+      id: 2,
+      name: "Trung",
+    },
+    {
+      id: 3,
+      name: "Huyền",
+    },
+  ];
+  const [checked, setCheck] = useState<number[]>([]);
+  const handleCheck = (id: number) => {
+    setCheck(pre => {
+      const isChecked = checked.includes(id);
+      if (isChecked) {
+        return checked.filter((item) => item != id);
+      } else {
+        return [...pre, id];
+      }
+    })
+  };
+  console.log(checked);
   return (
     <>
-      <div className=' bg-red-500'>
-        <div className=' bg-red-500 h-5 w-5'>Haha</div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div>
+        {/* <div>
+          <p className=' text-[30px] font-bold'>{count}</p>
+          <button onClick={cong}>Cộng</button>
+        </div>
+        <div>
+          <div>
+            {JSON.stringify(profile)}
+          </div>
+          <input onChange={(e)=>{setField(e.target.value)}} value={field} placeholder='field' />
+          <input onChange={(e)=>{setValue(e.target.value)}} value={value} placeholder='value'/>
+          <button onClick={()=>{updateProfile(field,value)}}>Update Profile</button>
+        </div> */}
+
+        {/* <p>{gift}</p>
+        <button onClick={getGift}>Lấy thưởng</button> */}
+        {courses.map((course) => (
+          <div key={course.id}>
+            <input
+              type="checkbox"
+              checked={checked.includes(course.id)}
+              onChange={() => {
+                handleCheck(course.id);
+              }}
+            />
+            {course.name}
+          </div>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
