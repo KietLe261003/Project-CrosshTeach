@@ -1,8 +1,9 @@
 import { Button } from "antd";
 
 const Logo = ({color= "black"}:{color?: String}) => {
+  console.log(color);
   return (
-    <Button>
+    <Button className="">
       haha
     </Button>
   );
