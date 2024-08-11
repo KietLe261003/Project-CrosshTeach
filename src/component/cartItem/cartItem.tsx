@@ -10,7 +10,7 @@ interface CartItemProps {
 const CartItem = ({title, content,icon}:CartItemProps) => {
   return (
     <div className=" relative h-[276px] w-[320px] border-[2px] border-[#EEC5C7] bg-[#FFFFFF] rounded-3xl flex flex-col items-start justify-center px-6">
-      <img src={LegCat} className=" absolute right-0 top-0"></img>
+      <img src={LegCat} className="absolute right-0 top-0"></img>
       <img src={Ball} className=" absolute right-[60px] top-[15px]"></img>
       <img src={Fish} className=" absolute right-[5px] top-[65px]"></img>
       <img src={icon} className="mb-5"/>
