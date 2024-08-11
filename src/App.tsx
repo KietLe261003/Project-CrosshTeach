@@ -3,10 +3,10 @@ import NavBar from "./layout/NavBar";
 import HomePage from "./pages/homePage";
 import ListCatLeg from "./component/ListCatLeg";
 
-function App() {
 
+function App() {
   return (
-    <div className="">
+    <div className="w-[98vw] flex flex-col items-center ">
         <NavBar/>
         <ListCatLeg/>
         <HomePage/>

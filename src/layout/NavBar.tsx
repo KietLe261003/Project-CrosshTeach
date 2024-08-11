@@ -1,42 +1,30 @@
 import { useState } from "react";
 import Logo from "../assets/logo.svg";
+import { siteMenu } from "../common/config/site";
+import clsx from "clsx";
 function NavBar() {
   const [checkNet, setCheckNet] = useState<boolean>(true);
   const clickNet = () => {
     setCheckNet(!checkNet);
   };
+  const [clickMenu,setClickMenu]=useState<String>("Tapos");
   return (
-    <nav className="relative px-20 py-4 w-[100vw] flex justify-between items-center h-[100px]">
+    <nav className="relative px-20 py-4 w-full flex justify-between items-center h-[100px]">
       <a className="text-3xl font-bold leading-none" href="#">
         <img src={Logo} />
       </a>
       <ul className="hidden absolute gap-3 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-8">
-        <li>
-          <a className="text-sm text-gray-400 hover:text-gray-500" href="#">
-            Tapos
-          </a>
-        </li>
-
-        <li>
-          <a className="text-sm text-blue-600 font-bold" href="#">
-            Wallet
-          </a>
-        </li>
-
-        <li>
-          <a className="text-sm text-gray-400 hover:text-gray-500" href="#">
-            Leaderboard
-          </a>
-        </li>
-
-        <li>
-          <a
-            className="text-sm font-semibold text-gray-400 hover:text-gray-500"
-            href="#"
-          >
-            Shop
-          </a>
-        </li>
+        {siteMenu.map((item,index) => {
+          return (
+            <li key={index} onClick={()=>{setClickMenu(item.title)}}>
+              <a className={clsx(
+                item.title===clickMenu ? "text-gray-700" : "text-gray-400",`text-sm hover:text-gray-500`
+              )} href="#">
+                {item.title}
+              </a>
+            </li>
+          );
+        })}
         <li>
           <select
             className="text-sm font-semibold text-red-500 hover:text-gray-500"
@@ -64,7 +52,7 @@ function NavBar() {
             checkNet === true ? "left-1" : "left-[100px]"
           } `}
         >
-          {checkNet===true ? "Mainnet" : "Testnet"}
+          {checkNet === true ? "Mainnet" : "Testnet"}
         </span>
       </div>
     </nav>

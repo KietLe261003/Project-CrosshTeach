@@ -1,15 +1,12 @@
 import { Spin } from "antd";
-import clsx from "clsx";
 
 interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLElement> {
-  className?: string;
   loading?: boolean;
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
 }
 
 export const AppButton = ({
-  className,
   loading,
   children,
   disabled,
@@ -18,10 +15,7 @@ export const AppButton = ({
 }: AppButtonProps) => {
   return (
     <button
-      className={clsx(
-        disabled ? "bg-slate-500 text-slate-700" : "",
-        `${className} bg-blue-200 border rounded-3xl`
-      )}
+      className="inline-flex items-center px-10 py-2 text-sm font-medium text-center text-white bg-[#CA5C3B] rounded-full hover:text-white border-none focus:outline-none"
       disabled={disabled || loading}
       onClick={onClick}
       type={type}

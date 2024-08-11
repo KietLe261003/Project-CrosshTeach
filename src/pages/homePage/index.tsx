@@ -1,6 +1,47 @@
+import { useEffect, useState } from "react";
+import { AppButton } from "../../component/button/AppButton";
+import { homeService } from "../../services/homeServices";
+import { User } from "../../type/user";
+import CartItem from "../../component/cartItem/cartItem";
+// import { User } from "../../type/user";
+import IconX from "../../assets/LogoX.svg";
+import IConDiscord from "../../assets/IconDiscord.svg";
 function HomePage() {
+  const [listUser, setListUser] = useState<User[]>([]);
+  const getUser = async () => {
+    try {
+      const rq = await homeService.getAllUser();
+      console.log(rq.data);
+      setListUser(rq.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getUser();
+  }, []);
+  const clikBtn = () => {
+    alert("Click thử");
+  };
+  const listCard = [
+    {
+      title: "Follow Tapos X",
+      content: "Follow Tapos X to earn Points",
+      icon: IconX
+    },
+    {
+      title: "Retweet post on X",
+      content: "Retweet Tapos post on X to earn Points",
+      icon: IconX
+    },
+    {
+      title: "Joint VibrantX Discord",
+      content: "Retweet a daily tweet to earn HEART",
+      icon: IConDiscord
+    }
+  ];
   return (
-    <div className=" flex flex-col items-center">
+    <div className="flex flex-col items-center">
       <span className="mt-16 mb-6 gap-4 text-5xl font-bold">Social Tasks</span>
       <span className="text-[#6B6B6B] text-xl mb-5">
         Complete the Social Tasks to earn extra $Heart token
@@ -31,13 +72,22 @@ function HomePage() {
             </g>
           </svg>
         </a>
-        <a
-          href="#"
-          className="inline-flex items-center px-10 py-2 text-sm font-medium text-center text-white bg-[#CA5C3B] rounded-full hover:text-white"
-        >
-          Connect your X account
-        </a>
+        <AppButton onClick={clikBtn}>Connect your X account</AppButton>
       </div>
+      <div className="gap-6 flex mt-16">
+        {
+            listCard.map((item,index)=>{
+              return <CartItem key={index} title={item.title} content={item.content} icon={item.icon}></CartItem>
+            })
+        }
+      </div>
+      <div>Xin chào</div>
+      {listUser.length > 0 &&
+        listUser.map((item, index) => (
+          <p key={index} className="text-black ">
+            {item.username}
+          </p>
+        ))}
     </div>
   );
 }
