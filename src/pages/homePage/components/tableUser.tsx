@@ -40,6 +40,8 @@ function TableUser() {
     confirm();
     setSearchText(selectedKeys[0]);
     setSearchedColumn(dataIndex);
+    console.log(searchText);
+    console.log(searchedColumn);
   };
 
   const handleReset = (clearFilters: () => void) => {
