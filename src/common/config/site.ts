@@ -14,6 +14,6 @@ export const siteMenu=[
     },
     {
         title: "Shop",
-        Link: RouteLink.SHOP
+        link: RouteLink.SHOP
     },
 ]

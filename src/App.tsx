@@ -1,16 +1,19 @@
 import "./App.css";
-import NavBar from "./layout/NavBar";
-import HomePage from "./pages/homePage";
-import ListCatLeg from "./component/ListCatLeg";
-
-
+import { Route, Routes } from "react-router-dom";
+import { homeRoute } from "./Router";
+import DefaultLayout from "./layout/DefaultLayout";
+import PrivateRoute from "./common/context/Private";
 function App() {
   return (
-    <div className="w-[98vw] flex flex-col items-center ">
-        <NavBar/>
-        <ListCatLeg/>
-        <HomePage/>
-    </div>
+      <Routes>
+        <Route path="/" element={<DefaultLayout/>}>
+          {homeRoute.map((route,index)=>(
+              <Route key={index} element={<PrivateRoute roles={route.private}/>}>
+                <Route key={index} path={route.path} element={<route.element/>}/>
+              </Route>
+          ))}
+        </Route>
+      </Routes>
   );
 }
 

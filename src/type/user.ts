@@ -3,8 +3,9 @@ export interface User {
     username: String,
     email: String,
     password: String,
-    phone: String,
-    dob: String,
-    gender: String,
-    address: String,
+    phone?: String,
+    dob?: String,
+    gender?: String,
+    address?: String,
+    role: String
 }
