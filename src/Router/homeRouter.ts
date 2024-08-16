@@ -7,7 +7,7 @@ const homeRoute = [
     {
         path: "/",
         element: HomePage,
-        private: [ROLE.ACCESS]
+        private: [ROLE.PUBLIC]
     },
     {
         path: "/Wallet",
@@ -22,7 +22,7 @@ const homeRoute = [
     {
         path: "/Login",
         element: TestLogin,
-        private: [ROLE.LOGIN]
+        private: [ROLE.PUBLIC]
     }
 ]
 export default homeRoute;

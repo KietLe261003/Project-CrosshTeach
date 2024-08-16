@@ -1,8 +1,7 @@
 export enum ROLE {
     USER= "user",
     ADMIN="admin",
-    LOGIN="login",
-    ACCESS="access"
+    PUBLIC="public"
 }
 
 export const KEY_LOCAL_USER = "User";

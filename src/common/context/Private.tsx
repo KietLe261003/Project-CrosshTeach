@@ -8,7 +8,7 @@ interface Props {
 }
 const PrivateRoute : React.FC<Props>=({ roles })=> {
 
-    if(roles.length === 1 && (roles[0]===ROLE.ACCESS || roles[0]===ROLE.LOGIN))
+    if(roles.length === 1 && (roles[0]===ROLE.PUBLIC))
         return <Outlet/>
     
     const {user} = useAuth();
