@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Logo from "../assets/logo.svg";
-import { siteMenu } from "../common/config/site";
+import Logo from "../Assets/logo.svg";
+import { siteMenu } from "../Common/config/site";
 import clsx from "clsx";
 import { useNavigate } from "react-router-dom";
-import { RouteLink } from "../util/RouterLink";
+import { RouteLink } from "../Util/RouterLink";
 function NavBar() {
   const [checkNet, setCheckNet] = useState<boolean>(true);
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
-import request from "../common/config/request"
-import { responseApi } from "../type/response";
+import request from "../Common/config/request"
+import { responseApi } from "../Type/response";
 
 export const homeService = {
     getAllUser: async ()=>{

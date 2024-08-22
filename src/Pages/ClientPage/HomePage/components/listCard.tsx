@@ -1,6 +1,6 @@
-import IconX from "../../../assets/LogoX.svg";
-import IConDiscord from "../../../assets/IconDiscord.svg";
-import CartItem from "../../../component/cartItem/cartItem";
+import IconX from "../../../../Assets/LogoX.svg";
+import IConDiscord from "../../../../Assets/IconDiscord.svg";
+import CartItem from "../../../../Component/cartItem/cartItem";
 function ListCard() {
   const listCard = [
     {

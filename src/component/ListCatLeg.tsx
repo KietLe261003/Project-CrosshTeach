@@ -1,7 +1,7 @@
-import cat from "../assets/Cat.svg"
-import cat1 from "../assets/Cat1.svg"
-import cat2 from "../assets/Cat2.svg"
-import cat3 from "../assets/Cat3.svg";
+import cat from "../Assets/Cat.svg"
+import cat1 from "../Assets/Cat1.svg"
+import cat2 from "../Assets/Cat2.svg"
+import cat3 from "../Assets/Cat3.svg";
 function ListCatLeg() {
     return ( 
         <>

@@ -1,8 +1,9 @@
-import { ROLE, ROLEALL } from "../common/constan";
-import TestLogin from "../pages/auth";
-import HomePage from "../pages/homePage";
-import LeaderBoard from "../pages/homePage/leaderboard";
-import Wallet from "../pages/homePage/wallet";
+import { ROLE, ROLEALL } from "../Common/constan";
+import TestLogin from "../Pages/ClientPage/Auth";
+import HomePage from "../Pages/ClientPage/HomePage";
+import LeaderBoard from "../Pages/ClientPage/HomePage/leaderboard";
+import Wallet from "../Pages/ClientPage/HomePage/wallet";
+
 const homeRoute = [
     {
         path: "/",

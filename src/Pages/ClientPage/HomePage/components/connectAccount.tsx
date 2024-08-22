@@ -1,4 +1,4 @@
-import { AppButton } from "../../../component/button/AppButton";
+import { AppButton } from "../../../../Component/button/AppButton";
 
 function ConnectAccount() {
     const clikBtn = () => {

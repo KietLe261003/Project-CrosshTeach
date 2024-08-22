@@ -1,6 +1,6 @@
-import { AppButton } from "../../component/button/AppButton";
-import { useAuth } from "../../common/context/AuthContext";
-import { ROLE } from "../../common/constan";
+import { ROLE } from "../../../Common/constan";
+import { useAuth } from "../../../Common/context/AuthContext";
+import { AppButton } from "../../../Component/button/AppButton";
 
 function TestLogin() {
     const {login,logout} = useAuth();

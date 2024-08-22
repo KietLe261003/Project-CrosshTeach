@@ -1,7 +1,7 @@
 import { createContext, PropsWithChildren, useContext, useState } from "react";
-import { User } from "../../type/user";
+import { User } from "../../Type/user";
 import { useNavigate } from "react-router-dom";
-import { RouteLink } from "../../util/RouterLink";
+import { RouteLink } from "../../Util/RouterLink";
 import { KEY_LOCAL_USER } from "../constan";
 
 interface AuthContextType {

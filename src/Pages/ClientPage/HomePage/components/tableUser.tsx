@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { User } from "../../../type/user";
-import { homeService } from "../../../services/homeServices";
+import { User } from "../../../../Type/user";
+import { homeService } from "../../../../Services/HomeServices";
 import {
   Button,
   InputRef,

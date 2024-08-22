@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth } from "./AuthContext";
 import { Navigate, Outlet } from "react-router-dom";
-import { RouteLink } from "../../util/RouterLink";
+import { RouteLink } from "../../Util/RouterLink";
 import { ROLE } from "../constan";
 interface Props {
     roles: String[]

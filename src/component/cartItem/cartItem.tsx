@@ -1,7 +1,7 @@
-import Heart from "../../assets/Hearts.svg";
-import LegCat from "../../assets/CatLeg.svg";
-import Ball from "../../assets/Ball.svg";
-import Fish from "../../assets/Fish.svg";
+import Heart from "../../Assets/Hearts.svg";
+import LegCat from "../../Assets/CatLeg.svg";
+import Ball from "../../Assets/Ball.svg";
+import Fish from "../../Assets/Fish.svg";
 interface CartItemProps {
     title: string;
     content: string;

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "./NavBar";
-import ListCatLeg from "../component/ListCatLeg";
+import ListCatLeg from "../Component/ListCatLeg";
 
 function DefaultLayout() {
     return ( 
